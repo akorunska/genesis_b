@@ -159,6 +159,7 @@ You will either get False of True result, depending on if transaction was succes
 {'result': True} 
 ```
 If broadcasting returned True, you can check out API ```http://127.0.0.1:port/transaction/pendings``` and find your transaction there.
+Next, produce new block by running POST ```http://127.0.0.1:port/produce-block```.
 
 * Finally, you can check balance of certain address.
 Note that transaction must necessarily be included in the block before being inculed in calculating balance.
@@ -172,23 +173,6 @@ Note that transaction must necessarily be included in the block before being inc
 (pitcoin-wallet-cli) quit
 Thank you for using pitcoin-wallet-cli
 ```
-
-
-## Miner CLI
-
-**Important info about using this system as a miner**
-
-You must provide file called ```minerkey``` inside ```pitcoin_modules``` folder.
-Initially this file exists in the repo and contains sample private key in wif format. 
-If you with to change it, edit this file along with file ```pitcoin_modules/address```, 
-that must contain corresponding address in mainnet format.
-
-After launch you should be seeing messages like this:
-```
-new block was mined and broadcast to the network. block hash is:  000304598f1158c21aa83df95ed20ce60a65c8ca118d65e9cc8c80d2bcce3f7b
-```
-You can go to the api and check out those mined blocks.
-
 
 ## Testing
 Running tests:
